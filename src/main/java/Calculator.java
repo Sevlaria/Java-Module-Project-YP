@@ -56,7 +56,12 @@ public class Calculator {
         try {
             Scanner in = new Scanner(System.in);
             cost = in.nextDouble();
-            return true;
+            if (cost <= 0) {
+                System.out.println("Некорректный ввод цены, попробуйте ввести снова!");
+                return false;
+            } else {
+                return true;
+            }
         } catch (InputMismatchException e) {
             System.out.println("Введено некорректное значение цены, " +
                     "введите в формате рубли,копейки.");
